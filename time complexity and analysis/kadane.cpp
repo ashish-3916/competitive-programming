@@ -19,7 +19,7 @@ int maxSubarraySum(int arr[], int n){
 
 int maxSubarraySum(int arr[], int n)
 {
-  int ans =0 ;
+  int curr =0 ;
   int best=0;
   
   for(int i=0;i<n;i++)
