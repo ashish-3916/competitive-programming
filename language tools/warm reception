@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool myfunc(const array<int, 2> &p1 , const array<int, 2> &p2 )
+{
+	if (p1[0] < p2[0])
+		return true;
+	else if ( p1[0] == p2[0])
+		return p1[1] < p2[1];
+	else return false;
+}
+int main() {
+	int n;
+	cin >> n;
+	vector<array<int , 2>> guest(n); // arrival , departure
+	for (int i = 0; i < n; i++)
+		cin >> guest[i][0];
+	for (int i = 0; i < n; i++)
+		cin >> guest[i][1];
+
+	sort( guest.begin(), guest.end() , myfunc);
+
+	/*for ( auto i : guest)
+		cout << i[0] << " " << i[1] << endl;*/
+
+	priority_queue< int, vector<int> , greater<int> > pq;
+	int ans = 1;
+	pq.push(guest[0][1]);
+	for (int i = 1; i < n; i++)
+	{
+		ans = max(ans, (int)pq.size());
+		while ( pq.size() and guest[i][0] >= pq.top()  )
+			pq.pop();
+		pq.push(guest[i][1]);
+		ans = max(ans, (int)pq.size());
+
+	}
+	cout << ans << endl;
+
+}
