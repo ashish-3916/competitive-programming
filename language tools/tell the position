@@ -1,0 +1,62 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+class student
+{
+public :
+	string name;
+    
+	int s1;
+	int s2;
+	int s3;
+    int rollno;
+	int total;
+};
+
+bool myfunc ( student const & s1, student const &s2)
+{
+     if(s1.total ==s2.total)
+         return s1.rollno < s2.rollno;
+    return s1.total > s2.total;
+}
+
+void solve()
+{
+	int n;
+	cin >> n;
+
+
+	vector<student> arr1(n);
+	for (int i = 0; i < n; i++)
+	{
+
+		cin >> arr1[i].name ;
+		cin >> arr1[i].s1 ;
+		cin >> arr1[i].s2 ;
+		cin >> arr1[i].s3;
+        arr1[i].rollno=i+1;
+		arr1[i].total = arr1[i].s1 + arr1[i].s2 + arr1[i].s3;
+
+	}
+	sort(arr1.begin(), arr1.end(), myfunc);
+	for (int i = 0; i < n; i++)
+	{
+		cout << i + 1 << " " << arr1[i].name << endl;
+	}
+
+
+
+}
+
+int main() {
+
+
+	solve();
+
+
+	return 0;
+}
+
