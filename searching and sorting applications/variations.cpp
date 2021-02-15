@@ -1,0 +1,52 @@
+//https://www.codechef.com/ZCOPRAC/problems/ZCO15002
+
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+#define dbg(x)  cout<<#x<<" "<<x<<endl;
+#define F first
+#define S second
+#define setbit(n) __builtin_popcount(n)
+#define all(x) x.begin() , x.end()
+#define clr(x) memset(x,0,sizeof(x))
+#define endl "\n" //delete if interactive
+using namespace std;
+
+
+void solve()
+{
+	int n, k;
+	cin >> n >> k;
+
+	vector<int> arr(n);
+	for (int i = 0 ; i < n ; i++)
+	{
+		cin >> arr[i];
+	}
+	sort(all(arr));
+
+	ll ans = 0;
+	for (int i = 0; i < n; i++)
+	{
+		int index = lower_bound(all(arr), k + arr[i]) - arr.begin();
+		ans += n - index;
+	}
+	cout << ans << endl;
+}
+
+int main() {
+	// your code goes here
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#endif
+
+	int t = 1;
+	//cin>>t;
+	while (t--)
+	{solve();}
+	return 0;
+}
+
