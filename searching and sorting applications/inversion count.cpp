@@ -33,7 +33,7 @@ long long merge(long long arr[], int s , int m, int e)
 }
 
 
-long long countInversions(long long arr[], int s, int e)
+long long countInversions(long long arr[], int s, int e) 
 {
 	if (s >= e)
 		return 0;
