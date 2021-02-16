@@ -64,7 +64,7 @@ void solve()
 
 	cout << ans << endl;
 }
-
+ 
 int main() {
 	// your code goes here
 	ios_base::sync_with_stdio(false);
