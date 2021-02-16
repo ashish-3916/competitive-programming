@@ -31,7 +31,7 @@ void solve()
 		int index = lower_bound(all(arr), k + arr[i]) - arr.begin();
 		ans += n - index;
 	}
-	cout << ans << endl;
+	cout << ans << endl; 
 }
 
 int main() {
