@@ -32,7 +32,7 @@ long long merge(vector< int >  &arr, int s , int m, int e)
 			arr1[index++] = arr[i++];
 		}
 		else
-		{
+		{ 
 			arr1[index++] = arr[j++];
 
 		}
