@@ -29,7 +29,7 @@
 		vector<int> candies (n);
 		for (int &i :  candies)
 			cin >> i;
-
+ 
 		sort(all(candies));
 		int low  = 0 ;
 		int high = candies[n - 1];
