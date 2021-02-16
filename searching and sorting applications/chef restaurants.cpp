@@ -48,7 +48,7 @@ void solve()
 			else
 			{
 				cout << 0 << endl;
-			}
+			} 
 
 		}
 		else
