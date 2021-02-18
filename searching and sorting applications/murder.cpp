@@ -73,9 +73,7 @@ void solve()
 		cin >> stairs[i];
 
 	ll ans = count_minSums(stairs , 0 , n - 1);
-	for (int i : stairs)
-		cout << i << " ";
-	cout << endl;
+	
 	cout << ans << endl;
 }
 
