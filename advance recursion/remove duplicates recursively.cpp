@@ -1,3 +1,5 @@
+// not a good solution
+
 void removeConsecutiveDuplicates(char *arr) {
 	
     if(arr[0]=='\0')
