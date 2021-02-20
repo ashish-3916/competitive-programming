@@ -32,7 +32,7 @@ bool check(ll n , ll c)
 	ll have = 0, req = n;
 
 	while (n > 0)
-	{
+	{ 
 		if (n - c < 0)
 		{have += n; break;}
 
