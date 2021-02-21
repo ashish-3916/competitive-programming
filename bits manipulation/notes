@@ -16,3 +16,6 @@ set ith bit   : n | 1<<i
 
 unset ith bit : if bit is set  n^ 1<<i
 
+if(n&1) -> odd  
+
+if((n & n-1)==0) ->power of 2
