@@ -7,3 +7,7 @@ int turnOffIthBit(int n, int i){
     return n ;  // else return same
 }
   
+int turnOffIthBit(int n, int i){
+    
+    return n & ~(1<<i) ;
+}
