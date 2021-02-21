@@ -12,6 +12,7 @@ NOT : complement
 
 check ith bit :  n &(1<<i)   if non zero bit is set
 
+set ith bit   : n | 1<<i
 
-
+unset ith bit : if bit is set  n^ 1<<i
 
