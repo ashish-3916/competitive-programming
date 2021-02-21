@@ -1,0 +1,17 @@
+left shift :  x<<i     ---> x = x*(2^i)
+
+right shift :  x>>i    ---> x = floor(x/(2^i))
+
+AND :  x&0= 0    x&1 = x
+
+OR :   x|0= x    x|1 = 1
+
+XOR :  x^0= x    x^1 = ~x               flip with 1 , same with 0
+
+NOT : complement
+
+check ith bit :  n &(1<<i)   if non zero bit is set
+
+
+
+
