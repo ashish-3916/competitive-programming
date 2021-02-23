@@ -30,7 +30,7 @@ int minSwaps(int arr[], int n)
 	for (int i = 0; i < n; i++)
 	{
 		arrPos[i].first = arr[i];
-		arrPos[i].second = i;
+		arrPos[i].second = i; 
 	}
 
 	// Sort the array by array
