@@ -18,6 +18,35 @@ if 0 occurs no code is possible ie code cant start with zero
 using namespace std;
 
 ll arr[5002];
+
+ll count_dp(string s)
+{
+	int n = s.size();
+	ll dp [n];
+	memset(dp , 0 , sizeof(dp));
+
+	dp[0] = 1;
+
+	for (int i = 1 ; i < n ; i++)
+	{
+		int ones = s[i] - '0';
+		int tens = s[i - 1] - '0';
+		int no = tens * 10 + ones;
+		if (s[i] != '0')
+			dp[i] = dp[i - 1];
+
+
+		if (no >= 10 and no < 27 and i>1)
+		{
+			dp[i] += dp[i - 2];
+		}
+		else if (no >= 10 and no < 27)
+			dp[i]++;
+
+		dp[i] %= mod;
+	}
+	return dp[n - 1];
+}
 ll count(string s )
 {
 
@@ -53,7 +82,8 @@ void solve()
 	cin >> s;
 	while (s != "0")
 	{	memset(arr, 0 , sizeof(arr));
-		ll ans  = count(s);
+		//ll ans  = count(s);
+	 	ll ans  =count_dp(s);
 		cout << ans << endl;
 		cin >> s;
 	}
