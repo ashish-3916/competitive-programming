@@ -30,3 +30,4 @@ int getMinimumStrength(int** grid, int m, int n) {
 
 }
 
+ 
