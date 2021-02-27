@@ -30,6 +30,6 @@ int findMaxSquareWithAllZeros(int** arr, int row, int col){
             
             ans=max(ans,dp[i][j]);
         }
-    }
+    } 
     return ans;
 }
