@@ -17,7 +17,8 @@ long long add(long long a , long long b)
 	long long ans = ((a % mod) + (b % mod)) % mod;
 	return ans;
 }
-/*ll dp[101][101][2];
+/*
+ll dp[101][101][2];
 ll solve2( ll n, ll k , ll first)
 {
 	if (n == 1)
@@ -58,39 +59,36 @@ void solve()
 
 }
 */
+int dp[101][100][2];
 void solve_dp()
 {
-	int t , n , k;
-	cin >> t >> n >> k;
+	
+	int n= 100;
+    int k= 99;
+	//int dp[n + 1][k + 1][2] = {0};
+	//memset(dp, 0, sizeof(dp));
 
-	int dp[n + 1][k + 1][2] = {0};
-	memset(dp, 0, sizeof(dp));
-
-	dp[1][0][0]=dp[1][0][1]=1;
-    
-	for (int i = 2 ; i <= n ; i++)
-	{
-		for (int j = 0 ; j <= k ; j++)
-		{
-			for (int l = 0 ; l <= 1 ; l++)
-			{
-				if (l == 0)
-				{
-					dp[i][j][l] = add(dp[i - 1][j][0] , dp[i - 1][j][1]);
-				}
-				else
-				{
-                
-                	if(j-1 >=0 )
-					   dp[i][j][l] = add(dp[i - 1][j][0], dp[i - 1][j - 1][1]);
-					else
-                       dp[i][j][l] = dp[i-1][j][0];
+	dp[1][0][1] = dp[1][0][0] = 1;
+    for(int i =2 ;i<=n ;i++)
+    {
+        for(int j = 0 ; j<=k   and (j<=(i-1)) ; j++)  // we can have atmost n-1 bitscounts for string of size n 
+        {
+            for(int l=0 ; l<2 ;l++)
+            {
+                if(l==0)
+                {
+                    dp[i][j][l] = add(dp[i-1][j][0], dp[i-1][j][1]);
                 }
-			}
-		}
-	}
-	cout << add(dp[n][k][0], dp[n][k][1]) << endl;
-
+                else
+                {
+                    if(j==0) // bits count cant be negative
+                        dp[i][j][l] = dp[i-1][j][0];
+                    else
+                        dp[i][j][l]= add( dp[i-1][j][0], dp[i-1][j-1][1]);
+                }
+            }
+        }
+    }    
 }
 
 int main() {
@@ -98,12 +96,17 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
+    solve_dp();
 
 	int t;
 	cin >> t;
 	for (int i = 1 ; i <= t ; i++ )
-	{	cout << i << " ";
-		solve_dp();
+	{	
+        int tt , n, k;
+        cin>>tt>>n>>k;
+        int ans = add(dp[n][k][0] , dp[n][k][1]) ; 
+        cout << i << " "<< ans<< endl;
+		
 	}
 	return 0;
 }
