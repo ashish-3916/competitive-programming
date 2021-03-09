@@ -1,2 +1,2 @@
-# Coding-Ninjas---CP
+# privae repo
  ubiquitous-adventure
