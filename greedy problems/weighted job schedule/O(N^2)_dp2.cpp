@@ -42,23 +42,26 @@ void solve()
 	/*for ( auto x : arr)
 		cout << x.start << " " << x . finish << " " << x.profit << endl;*/
 	int dp[n];
-	dp[n - 1] = arr[n - 1].profit;
-	for (int i = n - 2 ; i >= 0 ; i-- )
+	dp[0] = arr[0].profit;
+	for (int i = 1 ; i < n ; i++)
 	{
-		int choice1 = dp[i + 1]; // not takig this job;
-		// i am taking this job , i just need to find first correct(contraint) job
-		int choice2 = 0;
-		for (int j = i + 1 ; j < n ; j++)
-		{
-			if (arr[i].finish <  arr[j].start)
-			{choice2 = dp[j]; break ;}
-		}
-		choice2 += arr[i].profit;
-		dp[i] = max(choice2, choice1);
+		int choice1 = dp[i - 1];
 
+		int choice2 = arr[i].profit ;
+
+		for (int j = i - 1 ; j >= 0 ; j--)
+		{
+			if (arr[i].start >= arr[j].finish)
+			{
+				choice2 += dp[j];
+				break;
+			}
+		}
+
+		dp[i] = max( choice1 , choice2);
 	}
 
-	cout << dp[0] << endl;
+	cout << dp[n - 1] << endl;
 
 }
 int main() {
