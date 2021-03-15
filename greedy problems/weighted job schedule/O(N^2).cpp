@@ -1,8 +1,11 @@
 /*
 the idea is to calcluate for n-1 jobs , and fr 0th job check with job should be done next after completion of this 0th job
 
-output arr constains the status to profit we can achieve if we started from this ith job 
+output arr constains the status to profit we can achieve if we started from this ith job amd yes i am considering this job ,
+so which job should i start next which yeilds to max profit
+so i check from all and take max among n-1 choices   .......( so in this way including excluding are managed)
 
+NOTE: this is not same as  :  output[i] represints max profit till this job   , ouput[i] reprsents max profit if i includied / started with this job
 so return the max profit 
 
 cons:
