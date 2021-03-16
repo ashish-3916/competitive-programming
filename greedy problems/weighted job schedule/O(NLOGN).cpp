@@ -1,4 +1,4 @@
-  #include <iostream>
+#include <iostream>
 #include <bits/stdc++.h>
 #define ll long long
 #define dbg(x)  cout<<#x<<" "<<x<<endl;
@@ -25,24 +25,54 @@ bool myfunc(job j1 , job j2)
 	return j1.finish <= j2.finish;
 }
 
-int UpperBound(vector<job> & jobs,  int index )
+
+int UpperBound(vector<job> & jobs,  int e )
 {
-	 int lo = 0, hi = index - 1;
-    while (lo <= hi)
-    {
-        int mid = (lo + hi) / 2;
-        if (jobs[mid].finish <= jobs[index].start)
-        {
-            if (jobs[mid + 1].finish <= jobs[index].start)
-                lo = mid + 1;
-            else
-                return mid;
-        }
-        else
-            hi = mid - 1;
-    }
-    return -1;
+	int c = e ;
+
+	int s = 0;
+	e--;
+	int index = -1;
+	while (s <= e)
+	{
+		int mid = (s + e) / 2 ;
+
+		if (jobs[mid].finish <= jobs[c].start )
+			index = mid;
+		if (index == mid)
+		{
+			s = mid + 1;
+		}
+		else
+		{
+			e = mid - 1;
+		}
+
+	}
+	return index;
 }
+/*
+int bSearch(vector<job> & arr,  int e )
+{
+	int c = e;
+	int s = 0;
+	int index = -1;
+	while (s < e)
+	{
+		int mid = (s + e) / 2 ;
+
+		if (arr[mid].finish <= arr[c].start)
+			index =  mid;
+
+		if (index == mid)
+			s = mid + 1;
+		else
+			e = mid ;
+
+	}
+	return index ;
+}
+*/
 void solve()
 {
 	int n ;
