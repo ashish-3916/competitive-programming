@@ -1,3 +1,25 @@
+/*
+Sort the heights and try every possible split into two halves [0, i-1] and [i, n-1], where you add B to the left half and subtract B from the right half.
+Then the difference for that split is max(a[n-1] - B, a[i-1] + B) - min(a[0] + B, a[i] - B).
+
+int getMinDiff(int arr[], int n, int k) {
+        sort(arr, arr+n);
+        int min_elem, max_elem;
+        int ans = arr[n-1] - arr[0];
+        
+        for (int i=1 ; i<=n-1; i++){
+            if (arr[i] >= k){ // we start subtracting k when this condn satisfies
+                max_elem = max(arr[i-1] + k, arr[n-1] - k );
+                min_elem = min(arr[0] + k, arr[i] - k );
+                //cout << max_elem << " "<< min_elem<< endl;
+                ans = min(ans, max_elem - min_elem);
+            }
+            else continue;
+        }
+        return ans;
+    }
+
+*/
 #include <iostream>
 #include <bits/stdc++.h>
 #define ll long long
