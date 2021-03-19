@@ -18,6 +18,46 @@ void dfs(vector<vector<int>>&graph , int n , vector<bool>&visited , int sv)
 		if (graph[sv][i] and !visited[i])
 			dfs(graph, n, visited , i);
 }
+/*
+bool DFS ( vector<vector<int> > &graph , vector<bool> & visited ,int v, int sv , int ev)
+{
+    if( sv == ev) return true;
+    if( graph[sv][ev]) return true;
+
+    visited[sv]= true;
+
+    for(int i =0 ; i< v ;i++)
+    {
+        if(!visited[i] && graph[sv][i])
+        { if ( DFS(graph , visited , v , i, ev))return true;}
+    }
+    return false;
+}    
+
+bool BFS(vector<vector<int> > &graph , vector<bool> & visited ,int v, int sv , int ev)
+{ if( sv == ev) return true;
+ if( graph[sv][ev]) return true;
+ queue<int> pn;
+ pn.push(sv);
+ visited[sv]=1;
+
+ while(!pn.empty())
+ {
+     int s= pn . front ();
+     pn.pop();
+     if(graph[s][ev])return true;
+
+     for(int i=0 ; i< v ; i++)
+     {
+         if(!visited[i]&& graph[s][i])
+         {
+             pn.push(i), visited[i]=1;
+         }
+     }
+ }
+
+}
+*/
 void solve()
 {
 	int v, e ;
