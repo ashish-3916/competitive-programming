@@ -14,7 +14,7 @@ void dfs(vector<vector<int>>&graph , int n , vector<bool>&visited , int sv)
 {
 	visited[sv] = true;
 
-	for (int i = 0; i <= n ; i++)
+	for (int i = 0; i < n ; i++)
 		if (graph[sv][i] and !visited[i])
 			dfs(graph, n, visited , i);
 }
@@ -28,7 +28,7 @@ void solve()
         return;
     }
 
-	vector<vector<int>> graph(v + 1, vector<int>(v , 0));
+	vector<vector<int>> graph(v , vector<int>(v , 0));
 
 	for (int i = 0 ; i < e  ; i++)
 	{
