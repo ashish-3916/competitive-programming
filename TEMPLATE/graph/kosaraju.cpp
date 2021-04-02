@@ -40,7 +40,7 @@ void solve()
 	/*input graph */
 	graph[a].push_back(b);
 	transpose[b].push_back(a);
-}
+
 
 for (ll i = 0 ; i < n ; i++)
 {
