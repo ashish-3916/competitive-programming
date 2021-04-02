@@ -15,7 +15,7 @@ void dfs(ll sv) // first call
 void dfs1(ll sv) // second call
 {
 	visited[sv] = 1;
-  
+
 	for (ll child :  transpose[sv])
 		if (!visited[child])
 			dfs1(child);
@@ -42,28 +42,28 @@ void solve()
 	transpose[b].push_back(a);
 
 
-for (ll i = 0 ; i < n ; i++)
-{
-	if (!visited[i])
-		dfs(i);
-}
-
-for (ll i = 0 ; i < n ; i++)
-{
-	visited[i] = 0;
-}
-
-reverse(all(out_time)); // or use stack , or maintain last index
-vector<vector<ll>>component;
-
-for (int i : out_time)
-{
-	if (!visited[i])
+	for (ll i = 0 ; i < n ; i++)
 	{
-		scc.clear();
-		dfs1(i);
-		component.push_back(scc); // increases complexity;
+		if (!visited[i])
+			dfs(i);
 	}
-}
+
+	for (ll i = 0 ; i < n ; i++)
+	{
+		visited[i] = 0;
+	}
+
+	reverse(all(out_time)); // or use stack , or maintain last index
+	vector<vector<ll>>component;
+
+	for (int i : out_time)
+	{
+		if (!visited[i])
+		{
+			scc.clear();
+			dfs1(i);
+			component.push_back(scc); // increases complexity;
+		}
+	}
 //debug(component)
 }
