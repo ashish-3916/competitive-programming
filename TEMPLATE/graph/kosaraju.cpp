@@ -66,3 +66,4 @@ for (int i : out_time)
 	}
 }
 //debug(component)
+}
