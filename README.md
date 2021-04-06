@@ -1,2 +1,2 @@
-# privae repo
- ubiquitous-adventure
+# private repo
+ ubiquitous-adventure 
