@@ -1,3 +1,9 @@
+
+
+/*
+hash(s)=s[0]+s[1]⋅p+s[2]⋅p2+...+s[n−1]⋅pn−1 mod m = ∑i=0n−1 s[i]⋅pi  modm,
+*/
+
 #include<bits/stdc++.h>
 #define lli long long int
 #define vi vector<int>
