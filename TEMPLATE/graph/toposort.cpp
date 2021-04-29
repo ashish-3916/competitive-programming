@@ -34,7 +34,7 @@ void bfs()
 }
 
 
-/* // not sure 
+/* // not sure   UPD : works fine       learning  -> check cycle in directed graph
 const int N = 100001;
 
 vector<int> graph[N] ;
