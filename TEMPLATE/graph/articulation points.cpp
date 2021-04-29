@@ -41,7 +41,7 @@ void dfs(int sv, int parent)
 			++children;
 		}
 	}
-	if (p == -1 and children > 1)
+	if (parent == -1 and children > 1)
 		is_cutvertex(sv);
 }
 
