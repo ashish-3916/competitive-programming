@@ -1,4 +1,4 @@
-const int N = 10001;
+const int N = 100001;
 
 vector<int> graph[N] ;
 vector<int> indegree(N , 0);
@@ -35,7 +35,7 @@ void bfs()
 
 
 /* // not sure 
-const int N = 10001;
+const int N = 100001;
 
 vector<int> graph[N] ;
 vector<bool> visited(N , false);
