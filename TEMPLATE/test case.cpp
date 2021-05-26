@@ -58,6 +58,14 @@ int main() {
     cin>>t;
     while(t--)
     {solve();}
+    /* //kickstart
+    for (int i = 1 ; i <= t; i++)
+    {
+        cout << "Case #" << i << ": ";
+        solve();
+
+    }
+    */
     return 0;
 
 }
