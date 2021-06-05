@@ -1,0 +1,32 @@
+// bitmasking
+
+    assert(n < 32) 
+    int cnt = 0 ;
+    for (int mask = 0 ; mask < (1 << n) ; mask++) // generate all masks
+    {   int sum = 0;
+        for (int i = 0 ; i < n ; i++) // check ith bit is set or not
+            if (mask & (1 << i))
+                sum += arr[i];
+        if (sum == k)
+            cnt++;
+    }
+    cout << cnt << endl;
+
+//dp 
+  int dp[n + 1][k + 1];
+	for (int i = 0 ; i <= n ; i++)
+		dp[i][0] = 1 ;
+	for (int j = 1 ; j <= k ; j++)
+		dp[0][j] = 0 ;
+
+	for (int i = 1 ; i <= n ; i++)
+	{
+		for (int  j = 1 ; j <= k ; j++)
+		{
+			if (arr[i - 1] <= j)
+				dp[i][j] = dp[i - 1][j] + dp[i - 1][j - arr[i - 1]];
+			else
+				dp[i][j] = dp[i - 1][j];
+		}
+	}
+	cout << dp[n][k] << endl;
