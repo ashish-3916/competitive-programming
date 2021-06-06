@@ -37,3 +37,20 @@ long long solve(int like[][MAXN],int n)
     }
     return dp[(1<<n)-1] ;
 }
+
+
+long long solve(int like[][MAXN],int n)
+{
+	vector<ll> dp(1<<n , 0);
+    dp[(1<<n)-1]=1 ;
+    
+   for(int mask = (1<<n)-2  ; mask>=0 ; mask--)
+    {
+        int person  = __builtin_popcountll(mask) ; // people got candies ;
+        
+        for(int i = 0 ; i< n ; i++)
+            if(!(mask&(1<<i)) and like[person][i])
+               dp[mask]+= dp[mask|(1<<i)];
+    }
+    return dp[0] ;
+}
