@@ -37,3 +37,44 @@ int main()
     cout << ans ;
 }
 
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<long long> dp((1 << n) + 2);
+    dp[0] = 1;
+    for (int mask = 0; mask < (1 << n); mask++)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            if ((mask & (1 << i)) == 0) // bit is not set
+            {
+                int fl = 0;
+                for (int j = 0; j < n; j++)
+                {
+                    if (mask & (1 << j) && ((i + 1) & (j + 1)) == (i + 1))
+                    {
+                        fl = 1;
+                    }
+
+                }
+                if (fl == 0)
+                {
+                    dp[mask | (1 << i)] += dp[mask];
+                }
+            }
+
+        }
+    }
+    cout << dp[(1 << n) - 1] << '\n';
+} 
+
+
+
