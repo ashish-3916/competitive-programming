@@ -4,9 +4,8 @@ gcd(a,0) = a
 */
 int gcd(int a,int b)
 {
-    if(b>a)
-        return gcd(b , a);
-	if(b==0)
+    assert(a>b);
+    if(b==0)
         return a;
     return gcd(b , a%b);
 }
