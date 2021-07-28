@@ -1,4 +1,25 @@
+  
+/*
+int arr[n];
+int size=4*(n);
+    int seg[size];
+    buildTree(seg,arr,1,0,n-1);
+    updateTree(seg,arr,1,0,n-1,idx, val)
+    int ans=query(seg,1,0,n-1,l,r);
+*/
+void buildTree(int seg[], int arr[], int si, int ss, int se) //building minimum seg tree
+{
+    if (ss == se)
+    {
+        seg[si] = arr[ss];
+        return;
+    }
+    int mid = (ss + se) / 2;
+    buildTree(seg, arr, 2 * si, ss, mid);
+    buildTree(seg, arr, 2 * si + 1, mid + 1, se);
 
+    seg[si] = (seg[2 * si] + seg[2 * si + 1]);
+}
 void lazyProp(int seg[] , int lazy[], int si , int ss , int se , int qs , int qe , int val)
 {
 	if (lazy[si] != 0) // pending updates
