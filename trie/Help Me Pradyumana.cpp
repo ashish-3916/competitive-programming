@@ -82,6 +82,7 @@ void solve()
             cout << ss << endl;
     }
 }
+
 int main() {
     // your code goes here
     solve();
