@@ -1,0 +1,61 @@
+GCD -> log(max(a , b))
+    gcd(a , b) -> gcd (b , a % b) .... gcd(n, 0) = n ;]]
+    gcd(a , b) -> gcd (b - a , b)
+-----------------------------------------------------------------------------------------------------------
+LINEAR DIOPHANTINE EQ ->
+    ax+by=c will have intergral soln if gcd(a , b) % c = 0 ,  {a,b,c,x,y} are integers
+-----------------------------------------------------------------------------------------------------------
+EXTENDED GCD
+if
+    ax+by = gcd(a , b) then we can find x and y
+    ax+by = gcd(a , b) = gcd(b , a%b) = b(x1) + (a%b)(y1)  = b(x1) + (a - b*floor(a/b))(y1)
+
+    x = y1
+    y = x1 - (floor(a/b)*y1)
+
+    if(b==0)
+        return {a , 1, 0};  // {gcd , x1, y1}
+-----------------------------------------------------------------------------------------------------------
+MULTIPICATIVE MODULO INVERSE
+    (a*b)mod m =1 ;
+    find b ?   a,b,m are integer
+    
+    a*b + m*Q = 1 ;
+    hence soln (b) exists iif a and m are coprime;
+    final eq =  a*b + m*Q = gcd(a,m) // Extended Euclid  with b and Q(it is some multiple) as soln of eq
+-----------------------------------------------------------------------------------------------------------
+ADVANCED GCD  [A -> 10^250 , B -> 1e5 , gcd(A , B) = ? = gcd(B , A%B)  = gcd(B , Ans)]
+
+    A -> fg
+    A%B ?  -> (f*10 + g)%B -> ((f*10)%B + g%B)%B
+           -> (((0*10) + f)*10)%B + g%B)%B      
+    PreviousAns = 0 ;
+    int Ans = (PreviousAns*10 % B + currentDigit %B) 
+-----------------------------------------------------------------------------------------------------------
+EULER TOTIENT FUNCTION
+    phi-function ϕ(n), counts the number of integers between 1 and n inclusive, which are coprime to n  ie. gcd(m , n) = 1 , where m counts in  ϕ(n)
+ 1. ϕ(p)=p−1.  if p is prime
+ 2. ϕ(AB) = ϕ(A)*ϕ(B)  ,   if gcd(A,B)=1;
+ 3. ϕ(p^k) = p^k - (# of all multiples of p i.e. 1,p,2p,3p,......(p^(k-1))p)
+           = p^k - p^(k-1)
+
+
+    n=(p1^a1)⋅(p2^a2)⋯(pk^ak)   , where p1 p2 p3 ...pk are primes
+    ϕ(n)=ϕ((p1^a1).(p2^a2)⋯(pk^ak) )  
+    ϕ(n)=ϕ(p1^a1)⋅ϕ(p2^a2)⋯ϕ(pk^ak)   .... by prop 2
+        =(p1^a1−p1^(a1−1))⋅(p2^a2−p2^(a2−1))⋯(pk^ak−pk^(ak−1))  ... by prop 3
+        =n⋅(1−1/p1)⋅(1−1/p2)⋯(1−1/pk)
+-----------------------------------------------------------------------------------------------------------
+SEGMENTED SIEVE  primes in range L and R and R-L+1<=1e6
+
+  - build normal sieve (prime in 2 to sqrt(R))
+  - find the nearest multiple of prime P to L ((P/L)*L) and mark all multiples as false in L to R .
+-----------------------------------------------------------------------------------------------------------
+MATRIX EXPONENTIATATION
+
+    https://github.com/ashish-3916/practice-repo/blob/main/number%20theory%203/matrix-exponentiation.cpp
+-----------------------------------------------------------------------------------------------------------
+FERMET LITTLE THEORM
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
