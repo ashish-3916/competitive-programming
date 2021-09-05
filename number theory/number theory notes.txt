@@ -56,6 +56,29 @@ MATRIX EXPONENTIATATION
     https://github.com/ashish-3916/practice-repo/blob/main/number%20theory%203/matrix-exponentiation.cpp
 -----------------------------------------------------------------------------------------------------------
 FERMET LITTLE THEORM
+    if p is prime then , 
+
+    a^p mod p = a
+    a^p ≡ a mod m 
+
+ie  a^(p-1)mod p = 1 ; if a is not divisible by p 
+    a^(p-1) is congurent to 1 under mod p
+
+    (a*b)mod m , then b is MMI
+    MMI can be calculated as  a^(m-2) mod m  and this can be calculated by EXPONENTIATATION given m is prime.
 -----------------------------------------------------------------------------------------------------------
+WILSON'S THEORM
+    (p - 1) ! ≡  -1   mod p  where p is prime
+OR  (p - 1) ! ≡  (p-1) mod p
+
+can be used to find (n!) % p  where abs(n - p) is not much
+if(n>=p) (n!) % p = 0 ;
+else
+    (p - 1) ! ≡  -1
+    (1.2.3.4 . . . n  ). (n+1 .n+2 .... p-1) = -1
+    n!.(n+1 .n+2 .... p-1)= -1
+    n! =  -1* MMI((n+1 .n+2 .... p-1)) % p
+    n! = p - MMI((n+1 .n+2 .... p-1)) % p
+    n! = p - (n+1)^(p-2) * (n+2)^(p-2) *(n+3)^(p-2) ... (p-1)^(p-2)   using FERMET LITTLE THEORM  
 -----------------------------------------------------------------------------------------------------------
 
