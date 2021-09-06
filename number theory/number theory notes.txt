@@ -67,6 +67,16 @@ ie  a^(p-1)mod p = 1 ; if a is not divisible by p
     (a*b)mod m , then b is MMI
     MMI can be calculated as  a^(m-2) mod m  and this can be calculated by EXPONENTIATATION given m is prime.
 -----------------------------------------------------------------------------------------------------------
+a^(p-1)mod p = 1 ; if a is not divisible by p 
+
+so for any a^x 
+    x = k*(p-1) + x%(p-1)
+
+    (a^x) mod p = (a^(k*(p-1) + x%(p-1))) mod p 
+                = (a^(k*(p-1))mod p . a^(x%(p-1)) mod p) mod p 
+                =  1 .  a^(x%(p-1)) mod p (use modular exponentiation)
+-----------------------------------------------------------------------------------------------------------
+
 WILSON'S THEORM
     (p - 1) ! ≡  -1   mod p  where p is prime
 OR  (p - 1) ! ≡  (p-1) mod p
@@ -80,5 +90,8 @@ else
     n! =  -1* MMI((n+1 .n+2 .... p-1)) % p
     n! = p - MMI((n+1 .n+2 .... p-1)) % p
     n! = p - (n+1)^(p-2) * (n+2)^(p-2) *(n+3)^(p-2) ... (p-1)^(p-2)   using FERMET LITTLE THEORM  
+-----------------------------------------------------------------------------------------------------------
+
+
 -----------------------------------------------------------------------------------------------------------
 
