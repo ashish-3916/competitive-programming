@@ -85,4 +85,10 @@ public:
     }
 };
 ```
+BONUS -> 
 
+f(n) = a*f(n-1) + b*f(n-2) + c*f(n-3) + d
+
+[4*4] * [[f(n-1) f(n-2) f(n-3) d]] = [[f(n) f(n-1) f(n-2) d]]
+
+if f(n) is defined for even and odd -> calculate saperately 
