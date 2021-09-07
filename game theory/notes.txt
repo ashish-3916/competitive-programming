@@ -1,0 +1,11 @@
+GAME OF NIM 
+    The current player has a winning strategy if and only if the xor-sum of the pile sizes is non-zero. 
+    The xor-sum of a sequence a is a1⊕a2⊕…⊕an, where ⊕ is the bitwise exclusive or.
+    proof is kinda easy ..... if we get non zero nim we try to make it zero so other player loses.
+    so we find leftmost set bit , change it from any pile having that bit set .... and also then change
+    remainng set bits of nim sum to 0 accordingly by toggling 0/1 from the pile chosen
+
+GRUNDY NUMBERS
+    MEX -> smallest non negative missing value
+    GRUNDY(n) = MEX(GRUNDY(i) , )  where i is any state
+    GRUNDY(0) = 0;
