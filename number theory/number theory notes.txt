@@ -67,6 +67,13 @@ ie  a^(p-1)mod p = 1 ; if a is not divisible by p
     (a*b)mod m , then b is MMI
     MMI can be calculated as  a^(m-2) mod m  and this can be calculated by EXPONENTIATATION given m is prime.
 -----------------------------------------------------------------------------------------------------------
+FERMET- EULER THEORM
+if x and n are coprime then , 
+    x^ϕ(n) ≡ 1 mod n ;
+
+    minor version of fermet little THEORM
+-----------------------------------------------------------------------------------------------------------
+
 a^(p-1)mod p = 1 ; if a is not divisible by p 
 
 so for any a^x 
