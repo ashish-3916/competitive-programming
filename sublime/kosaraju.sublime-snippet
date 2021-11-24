@@ -1,0 +1,78 @@
+<snippet>
+	<content><![CDATA[
+// graph, transpose , visited , (out_time , scc)
+
+void dfs(ll sv) // first call
+{
+	visited[sv] = 1;
+
+	for (ll child :  graph[sv])
+		if (!visited[child])
+			dfs(child);
+
+	out_time.push_back(sv);
+
+}
+
+void dfs1(ll sv) // second call
+{
+	visited[sv] = 1;
+
+	for (ll child :  transpose[sv])
+		if (!visited[child])
+			dfs1(child);
+
+	scc.push_back(sv); // this node is present in this scc
+}
+
+void init()
+{
+	scc.clear(); out_time.clear();
+	for (ll i = 0; i < N ; i++)
+	{
+		graph[i].clear();
+		transpose[i].clear();
+		visited[i] = 0;
+	}
+}
+void solve()
+{
+	init();
+
+	/*input graph */
+	graph[a].push_back(b);
+	transpose[b].push_back(a);
+
+
+	for (ll i = 0 ; i < n ; i++)
+	{
+		if (!visited[i])
+			dfs(i);
+	}
+
+	for (ll i = 0 ; i < n ; i++)
+	{
+		visited[i] = 0;
+	}
+
+	reverse(all(out_time)); // or use stack , or maintain last index
+	vector<vector<ll>>component;
+
+	for (int i : out_time)
+	{
+		if (!visited[i])
+		{
+			scc.clear();
+			dfs1(i);
+			component.push_back(scc); // increases complexity;
+		}
+	}
+//debug(component)
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>kosaraju</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

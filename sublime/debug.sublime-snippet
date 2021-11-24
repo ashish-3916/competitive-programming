@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+https://codeforces.com/blog/entry/68809#:~:text=To%20debug%2C%20just%20type%3A%20debug,requires%20C%2B%2B%2011%20or%20above.&text=Primitive%20data%20types%3A%20bool%20%2C%20int,%3A%3Apair%20%2C%20std%3A%3Astring
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>tourist</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

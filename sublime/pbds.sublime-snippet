@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+using namespace __gnu_pbds;
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp> // Common file
+template <typename num_t>
+using ordered_set = tree<num_t, null_type, less_equal<num_t>, rb_tree_tag, tree_order_statistics_node_update>;
+/* order_of_key() -> elements smaller than this 
+  *find_by_order()-> index in sorted array;
+*/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>pbds</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

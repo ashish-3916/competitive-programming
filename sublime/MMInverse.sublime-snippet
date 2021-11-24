@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+/*
+multiplicative modulo inverse
+    (a*b)mod m =1 ;
+    find b ?   a,b,m are integer
+    
+    a*b + m*Q = 1 ;
+    hence soln (b) exists iif a and m are coprime;
+    final eq =  a*b + m*Q = gcd(a,m) // Extended Euclid  with b and Q(it is some multiple) as soln of eq
+*/
+
+vector<int>ExtendedEuclid(int a , int b)
+{
+    if (b == 0)
+        return {a , 1 , 0};
+
+    vector<int> small = ExtendedEuclid(b, a % b);
+
+    return {small[0]  , small[2] , small[1] - (a / b) *small[2]}; // gcd , x1 , y1
+}
+int MMInverse(int a , int m)
+{   
+    if(__gcd(a,m)!=1) // not coprime ,,, if m is prime , use fermat little thrm
+        return -1;
+    vector<int> res = ExtendedEuclid(a , m);
+    return (res[1] + m ) % m; // in case res1 is neg
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>MMInverse</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
