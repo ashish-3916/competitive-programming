@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+		/*
+		accumulate : void accumulate(a , a+3 , variable in which sum is stored, cmp) [l,r)
+		partial_sum : void partial_sum(first, last , array in which prefix sum is stored)
+
+		min_element : iterator min_element (first , last)
+		max_element :iterator max_element (first , last)
+
+		partial_sort :void partial_sort(v.begin(), v.begin() + k, v.end() , cmp) // sort 1st k elements
+		nth_element :void nth_element( v.begin() , v.begin() + k-1 , v.end() , comp) // kth element in place (quick_select )
+		
+		----------------stl functions--------------------------
+		bool binary_search(begin,end,value);
+		iterator  lower_bound(begin,end,value); // first occurence of value, 
+												// if not present next occuring element
+		iterator  upper_bound(begin,end,value); // first value greater than of value
+		double __gcd(x,y) 
+
+		*/
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>stl_functions</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

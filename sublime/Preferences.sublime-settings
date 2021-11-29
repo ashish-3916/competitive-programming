@@ -1,0 +1,11 @@
+{
+	"theme": "Adaptive.sublime-theme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "auto",
+	"dark_color_scheme": "Monokai.sublime-color-scheme",
+	"light_color_scheme": "Packages/10% Too Dull for My Tastes Color Scheme/scotchy.tmTheme",
+	"font_size": 10,
+}

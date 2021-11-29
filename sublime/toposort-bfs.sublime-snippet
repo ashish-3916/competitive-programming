@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+const int N = 100001;
+
+vector<int> graph[N] ;
+vector<int> indegree(N , 0);
+vector<int> ans  ;
+
+int n , m ;
+void bfs()
+{
+	queue<int> q ;
+	for (int i = 1 ; i <= n ; i++)
+		if (indegree[i] == 0)
+			q.push(i);
+
+	while (q.size())
+	{
+		int curr = q.front();
+		q.pop() ;
+
+		ans.push_back(curr);
+
+		for (int child :  graph[curr])
+		{
+			indegree[child]--;
+			if (indegree[child] == 0)
+				q.push(child);
+		}
+	}
+	if(ans.size()==n)
+		// topsort in ans
+	else
+		// topsort not possible
+
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>toposort-bfs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
