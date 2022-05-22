@@ -1,5 +1,7 @@
 import java.util.*;
 
+
+// interface abstraction ecapsulation interitance polymorphism
 class Emp {
     static String manager; // variable  is static for all the objects of the class
 
