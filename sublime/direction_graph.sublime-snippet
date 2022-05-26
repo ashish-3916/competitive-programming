@@ -4,8 +4,7 @@ int dirn[8][2] = {{-1, 0} , {-1, -1}, { -1, 1}, {0, -1}, {0, 1 } , {1, -1}, {1, 
 int dirn[8][2] = {{ 2, 1} , { 2, -1} ,{ -2 ,1} ,{-2,-1}, {1 ,-2} , {1 , 2}, {-1, 2}, {-1,-2}};
 int dirn[4][2] = {{1 , 0} , {-1 ,0} , {0 ,-1} , {0 , 1}};
 
-bool valid(int x , int y, int n , int m)
-{
+bool valid(int x , int y, int n , int m){
     return x >= 0 and y >= 0 and x < n and y < m;
 }
 

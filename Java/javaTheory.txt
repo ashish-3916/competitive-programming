@@ -1,0 +1,39 @@
+->  scan.nextLine()  => if the string input is in next line, first take scanner to next line 
+->  scan.hasNext() => boolean if there is next object to be input , until the EOF
+
+->  Static initialization blocks are executed when the class is loaded, and you can initialize static variables in those blocks.
+	 static{	 }
+->  only static members can be accesed by static functions 
+
+->  try{throw new Exception("");} catch(Exception e) {print e} // there are many type of excepion like airthematic etc
+
+->  Using inheritance, one class can acquire the properties of others.
+->	When a subclass inherits from a superclass, it also inherits its methods; however, it can also override the superclass methods (as well as declare 
+	and implement new ones.
+	A method declared final cannot be overridden.
+	The access level cannot be more restrictive than the overridden method’s access level. For example: if the super class method is declared public then the overridding method in the sub class cannot be either private or protected.
+	When a method in a subclass overrides a method in superclass, it is still possible to call the overridden method using super keyword. If you write super.func() to call the function func(), it will call the method that was defined in the superclass.
+
+->  A Java abstract class is a class that can't be instantiated. That means you cannot create new instances of an abstract class. It works as a base for
+    subclasses. Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+    Abstraction is achieved by declaring class abstract having one or more methods abstract. Which is nothing but essential characteristic which should 
+    be implemented by the class extending it.A class declared as abstract needs to be extended and its method implemented. It cannot be instantiated.
+
+->  A Java interface can only contain method signatures and fields. The interface can be used to achieve polymorphism.
+	A class implements interface .
+	An interface is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and 
+	nested types. Method bodies exist only for default methods and static methods.
+	Interfaces cannot be instantiated, they can only be implemented by classes or extended by other interfaces.
+	Using interface we can achieve multiple inhertence.
+->	make sure that you declare methods as public or private.
+
+->  When a method in a subclass overrides a method in superclass, it is still possible to call the overridden method using super keyword. If you write 
+	super.func() to call the function func(), it will call the method that was defined in the superclass.
+	super can be used to refer immediate parent class instance variable.
+	super can be used to invoke immediate parent class method.
+	super() can be used to invoke immediate parent class constructor.
+
+->  The Java instanceof operator is used to test if the object or instance is an instanceof the specified type.
+    syntax :  objectName instanceof objectType , return a boolean
+
+->	Iterator it = Object.iterator();  while(it.hasNext()){=it.next()}

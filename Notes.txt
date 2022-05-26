@@ -1,4 +1,0 @@
-1. Doing a bit-wise AND of n and n - 1 flips the least-significant 1-bit in n to 0.
-
-2. Catalan numbers are 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 
-   (2n)! / ((n + 1)! * n!)

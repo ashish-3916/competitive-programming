@@ -2,15 +2,9 @@
 	<content><![CDATA[
 #include <bits/stdc++.h>
 #define ll long long
-#define dbg(x)  cout<<#x<<" "<<x<<endl;
-#define F first
-#define S second
-#define setbit(n) __builtin_popcountll(n)
 #define all(x) x.begin() , x.end()
-#define clr(x) memset(x,0,sizeof(x))
-#define pb push_back
-#define ub upper_bound
-#define lb lower_bound
+// first second push_back upper_bound lower_bound
+#define setbit(n) __builtin_popcountll(n)
 #define endl "\n" //delete if interactive
 using namespace std;
 
@@ -41,9 +35,8 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 
-void solve()
-{
-
+void solve(){
+    
 }
 int main() {
     // your code goes here
@@ -59,7 +52,6 @@ int main() {
 
     return 0;
 }
-
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	 <tabTrigger>cpp</tabTrigger>
