@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+class TreeAncestor {
+    int LCA[50001][16]; // 2^jth parent of node i
+public:
+    TreeAncestor(int n, vector<int>& parent) {
+        memset(LCA, -1 , sizeof LCA);
+        for (int i = 0 ; i < n ; i++)
+            LCA[i][0] = parent[i];
+        for (int j = 1 ; j < 16 ; j++) {
+            for (int i = 0 ; i < n ; i++) {
+                if (LCA[i][j - 1] != -1) {
+                    LCA[i][j] = LCA[LCA[i][j - 1]][j - 1];
+                }
+            }
+        }
+    }
+
+    int getKthAncestor(int node, int k) {
+        int ancestor = node;
+        for (int bit = 0 ; bit < 30 ; bit++) {
+            if ((k & (1 << bit)) > 0) {
+                ancestor = LCA[ancestor][bit];
+                if (ancestor == -1) return -1;
+            }
+        }
+        return ancestor;
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>LCA</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
